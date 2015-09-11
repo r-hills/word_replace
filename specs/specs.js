@@ -1,21 +1,33 @@
 describe('wordReplace', function() {
 
+	var string, wordToReplace, replacement, results;
+
 	it("Test returning one simple word string", function() {
-		var string = "wow";
-		var wordToReplace = "wow";
-		var replacement = "how"
+		string = "wow";
+		wordToReplace = "wow";
+		replacement = "how";
 	  expect(
 	  	wordReplace(string, wordToReplace, replacement)
 	  ).to.eql("how");
 	});
 
-	it("Test replacing one word in simple multiple word string", function() {
-		var string = "its wow";
-		var wordToReplace = "wow";
-		var replacement = "how"
+	it("Test replacing word at end simple multiple word string", function() {
+		string = "its wow";
+		wordToReplace = "wow";
+		replacement = "how";
 	  expect(
 	  	wordReplace(string, wordToReplace, replacement)
 	  ).to.eql("its how");
+	});
+
+	it("Test replacing word in the middle of a multiple word string", function() {
+		string = "its wow bob";
+		wordToReplace = "wow";
+		replacement = "how";
+		results = "its how bob";
+	  expect(
+	  	wordReplace(string, wordToReplace, replacement)
+	  ).to.eql(results);
 	});
 
 
