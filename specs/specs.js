@@ -70,6 +70,26 @@ describe('wordReplace', function() {
 	  ).to.eql(results);
 	});	
 
+	it("Test replacing word with punctuation in it in string", function() {
+		string = "This is it, or this isn't it, or is it?";
+		wordToReplace = "isn't";
+		replacement = "wasn't";
+		results = "This is it, or this wasn't it, or is it?";
+	  expect(
+	  	wordReplace(string, wordToReplace, replacement)
+	  ).to.eql(results);
+	});	
+
+	it("Test replacing anything with anything else in string", function() {
+		string = "This <is> (*&^) is it?";
+		wordToReplace = "is";
+		replacement = "+";
+		results = "This <+> (*&^) + it?";
+	  expect(
+	  	wordReplace(string, wordToReplace, replacement)
+	  ).to.eql(results);
+	});	
+
 
 
 });
