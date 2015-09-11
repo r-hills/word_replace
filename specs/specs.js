@@ -80,7 +80,7 @@ describe('wordReplace', function() {
 	  ).to.eql(results);
 	});	
 
-	it("Test replacing anything with anything else in string", function() {
+	it("Test replacing any word with anything else in string", function() {
 		string = "This <is> (*&^) is it?";
 		wordToReplace = "is";
 		replacement = "+";
@@ -90,6 +90,25 @@ describe('wordReplace', function() {
 	  ).to.eql(results);
 	});	
 
+	it("Test replacing a chunk of string with something else", function() {
+		string = "This is great isn't it?";
+		wordToReplace = "is great";
+		replacement = "BOB";
+		results = "This BOB isn't it?";
+	  expect(
+	  	wordReplace(string, wordToReplace, replacement)
+	  ).to.eql(results);
+	});	
+
+	it("Test replacing word surrounded by special characters in string", function() {
+		string = "This (*is^) it?";
+		wordToReplace = "is";
+		replacement = "PLEASE HELP ME!!!  I AM TRAPPED IN A ROOM BEING FORCED TO PROGRAM AT GUN POINT! 123456 MAIN STREET";
+		results = "This (*PLEASE HELP ME!!!  I AM TRAPPED IN A ROOM BEING FORCED TO PROGRAM AT GUN POINT! 123456 MAIN STREET^) it?";
+	  expect(
+	  	wordReplace(string, wordToReplace, replacement)
+	  ).to.eql(results);
+	});	
 
 
 });
