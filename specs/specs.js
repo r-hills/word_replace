@@ -30,6 +30,17 @@ describe('wordReplace', function() {
 	  ).to.eql(results);
 	});
 
+	it("Test replacing word with mixed case in string", function() {
+		string = "its wOw bob";
+		wordToReplace = "wow";
+		replacement = "how";
+		results = "its how bob";
+	  expect(
+	  	wordReplace(string, wordToReplace, replacement)
+	  ).to.eql(results);
+	});
+
+
 
 });
 
