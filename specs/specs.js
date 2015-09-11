@@ -60,7 +60,15 @@ describe('wordReplace', function() {
 	  ).to.eql(results);
 	});	
 
-
+	it("Test replacing only whole word occurences of word in string", function() {
+		string = "This is it, or this isn't it, or is it?";
+		wordToReplace = "is";
+		replacement = "was";
+		results = "This was it, or this isn't it, or was it?";
+	  expect(
+	  	wordReplace(string, wordToReplace, replacement)
+	  ).to.eql(results);
+	});	
 
 
 
