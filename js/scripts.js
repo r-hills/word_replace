@@ -1,8 +1,13 @@
-var wordReplace = function(inputString) {
+var wordReplace = function(inputString, wordToReplace, replacementWord) {
 
-	return inputString.toLowerCase();
+	var regex = new RegExp("\\b" + wordToReplace + "\\b", "gi");
+	var outputString = inputString.replace(regex, replacementWord);
 
+	return outputString;
 };
+
+
+
 
 
 
