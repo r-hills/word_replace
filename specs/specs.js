@@ -40,6 +40,28 @@ describe('wordReplace', function() {
 	  ).to.eql(results);
 	});
 
+	it("Test replacing word with punctuation in string", function() {
+		string = "This is a better test!!";
+		wordToReplace = "test";
+		replacement = "place";
+		results = "This is a better place!!";
+	  expect(
+	  	wordReplace(string, wordToReplace, replacement)
+	  ).to.eql(results);
+	});	
+
+	it("Test replacing multiple occurences of word in string", function() {
+		string = "This is a better place, or is it a better place?";
+		wordToReplace = "better";
+		replacement = "beer";
+		results = "This is a beer place, or is it a beer place?";
+	  expect(
+	  	wordReplace(string, wordToReplace, replacement)
+	  ).to.eql(results);
+	});	
+
+
+
 
 
 });
