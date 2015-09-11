@@ -1,4 +1,6 @@
-var wordReplace = function(inputText) {
+var wordReplace = function(inputString) {
+
+	return inputString.toLowerCase();
 
 };
 
